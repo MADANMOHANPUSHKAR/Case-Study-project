@@ -2,14 +2,14 @@
 
 This roadmap defines the execution phases for the College Activity & Facility Portal. 
 
-## Phase 1: Foundation & Biometrics
+## Phase 1: Foundation & Biometrics (COMPLETE)
 **Goal:** Establish the core infrastructure, traditional authentication, and the facial recognition/liveness engine.
-- [ ] Initialize Next.js project with Tailwind CSS and shadcn/ui.
-- [ ] Set up Supabase with PostgreSQL, including the `pgvector` extension.
-- [ ] Implement standard user authentication (Email/Password or SSO).
-- [ ] Build the Face Registration flow (extracting embeddings via MediaPipe/face-api.js).
-- [ ] Develop the Biometric Scanner component with basic Liveness Detection (blink/turn head).
-- [ ] Create the server-side matching logic to compare live scans against stored vectors.
+- [x] Initialize Next.js project with Tailwind CSS and shadcn/ui.
+- [x] Set up Supabase with PostgreSQL, including the `pgvector` extension.
+- [x] Implement standard user authentication (Email/Password or SSO).
+- [x] Build the Face Registration flow (extracting embeddings via MediaPipe/face-api.js).
+- [x] Develop the Biometric Scanner component with basic Liveness Detection (blink/turn head).
+- [x] Create the server-side matching logic to compare live scans against stored vectors.
 
 ## Phase 2: Facilities & Events Modules
 **Goal:** Build the primary user-facing features and integrate the biometric scanner for access control.
