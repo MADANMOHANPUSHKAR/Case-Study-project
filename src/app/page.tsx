@@ -9,6 +9,9 @@ export default function Home() {
           <a href="/login" className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
             Login with Face Scan
           </a>
+          <a href="/register" className="px-6 py-3 bg-white text-blue-600 border border-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition">
+            Register Face
+          </a>
         </div>
       </div>
     </main>
