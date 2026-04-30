@@ -24,8 +24,10 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (response.ok) {
-        setAuthStatus("Login Successful! Welcome.");
-        // Redirect to dashboard in the future
+        setAuthStatus("Login Successful! Redirecting to Dashboard...");
+        setTimeout(() => {
+          window.location.href = "/dashboard";
+        }, 1500);
       } else {
         setAuthStatus(`Login Failed: ${data.error}`);
       }
