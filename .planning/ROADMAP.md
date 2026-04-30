@@ -11,13 +11,13 @@ This roadmap defines the execution phases for the College Activity & Facility Po
 - [x] Develop the Biometric Scanner component with basic Liveness Detection (blink/turn head).
 - [x] Create the server-side matching logic to compare live scans against stored vectors.
 
-## Phase 2: Facilities & Events Modules
+## Phase 2: Facilities & Events Modules (COMPLETE)
 **Goal:** Build the primary user-facing features and integrate the biometric scanner for access control.
-- [ ] **Facilities**: Create booking system for Gym and Swimming Pool (slots, capacity).
-- [ ] **Facilities**: Integrate the Face Scanner for "check-in" at facilities.
-- [ ] **Societies & Events**: Build event calendar and RSVP system.
-- [ ] **Societies & Events**: Integrate the Face Scanner for proxy-proof event attendance.
-- [ ] **Workshops**: Create workshop registration flow.
+- [x] **Facilities**: Create booking system for Gym and Swimming Pool (slots, capacity).
+- [x] **Facilities**: Integrate the Face Scanner for "check-in" at facilities.
+- [x] **Societies & Events**: Build event calendar and RSVP system.
+- [x] **Societies & Events**: Integrate the Face Scanner for proxy-proof event attendance.
+- [x] **Workshops**: Create workshop registration flow.
 
 ## Phase 3: Dashboards & Polish
 **Goal:** Provide management tools for administrators and finalize the mobile experience.
