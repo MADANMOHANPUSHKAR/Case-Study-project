@@ -12,6 +12,12 @@ export async function POST(request: Request) {
       );
     }
 
+    // Mock for demo if no real Supabase credentials
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL.includes("placeholder")) {
+      console.warn("Using mock login. Database not configured.");
+      return NextResponse.json({ success: true, userId: "00000000-0000-0000-0000-000000000000" });
+    }
+
     // Convert JS array to Postgres vector format: '[0.1, 0.2, ...]'
     const vectorString = `[${embedding.join(",")}]`;
 
