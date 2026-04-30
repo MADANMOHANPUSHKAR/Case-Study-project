@@ -36,7 +36,10 @@ export default function LoginPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-100">
-      <h1 className="text-3xl font-bold mb-8">Secure Face Login</h1>
+      <h1 className="text-3xl font-bold mb-2">Secure Face Login</h1>
+      <p className="text-gray-500 mb-8">
+        New here? <a href="/register" className="text-blue-500 hover:underline">Register your face</a>
+      </p>
       
       {!authStatus ? (
         <BiometricScanner onSuccess={handleFaceSuccess} />
