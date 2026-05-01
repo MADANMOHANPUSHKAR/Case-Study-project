@@ -21,6 +21,14 @@ export default function RegisterPage() {
       setStatusMsg("Please fill in all fields.");
       return;
     }
+
+    // Email validation: Firstname.sirname@*students.sau.ac.in
+    const emailRegex = /^[a-zA-Z]+\.[a-zA-Z]+@[a-zA-Z0-9]+students\.sau\.ac\.in$/i;
+    if (!emailRegex.test(email)) {
+      setStatusMsg("Use college email (e.g. John.Doe@X0XXstudents.sau.ac.in)");
+      return;
+    }
+
     setStep("scan");
     setStatusMsg("");
   };
