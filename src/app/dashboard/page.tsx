@@ -26,18 +26,21 @@ export default function DashboardPage() {
           fetch(`/api/rsvps?user_id=${MOCK_USER_ID}`),
         ]);
 
-        const bookings: any[] = await bookingsRes.json();
-        const rsvps: any[] = await rsvpsRes.json();
+        const bookingsData = await bookingsRes.json();
+        const rsvpsData = await rsvpsRes.json();
+
+        const bookings = Array.isArray(bookingsData) ? bookingsData : [];
+        const rsvps = Array.isArray(rsvpsData) ? rsvpsData : [];
 
         const unified: UnifiedItem[] = [
-          ...bookings.map((b) => ({
+          ...bookings.map((b: any) => ({
             id: b.id,
             type: "booking" as const,
             title: `Facility: ${b.facilities?.name || "Unknown"}`,
             date: new Date(b.start_time),
             status: b.status,
           })),
-          ...rsvps.map((r) => ({
+          ...rsvps.map((r: any) => ({
             id: r.id,
             type: "rsvp" as const,
             title: `Event: ${r.events?.title || "Unknown"}`,

@@ -8,7 +8,7 @@ export default function AdminDashboardPage() {
   const [loading, setLoading] = useState(true);
 
   const [showEventModal, setShowEventModal] = useState(false);
-  const [newEvent, setNewEvent] = useState({ title: "", description: "", date: "", capacity: 50 });
+  const [newEvent, setNewEvent] = useState({ title: "", description: "", date: "", capacity: "50" });
 
   // Hardcoded check for v1
   const IS_ADMIN = true;
@@ -49,14 +49,14 @@ export default function AdminDashboardPage() {
           title: newEvent.title,
           description: newEvent.description,
           date: new Date(newEvent.date).toISOString(),
-          capacity: newEvent.capacity,
+          capacity: Number(newEvent.capacity) || 50,
           is_workshop: false,
         }),
       });
       if (res.ok) {
         setShowEventModal(false);
         setStats((prev) => ({ ...prev, events: prev.events + 1 }));
-        setNewEvent({ title: "", description: "", date: "", capacity: 50 });
+        setNewEvent({ title: "", description: "", date: "", capacity: "50" });
       } else {
         alert("Failed to create event");
       }
@@ -118,7 +118,7 @@ export default function AdminDashboardPage() {
               <input type="text" placeholder="Event Title" className="w-full border rounded-lg p-2 dark:bg-zinc-800" value={newEvent.title} onChange={(e) => setNewEvent({...newEvent, title: e.target.value})} />
               <textarea placeholder="Event Description" className="w-full border rounded-lg p-2 dark:bg-zinc-800" value={newEvent.description} onChange={(e) => setNewEvent({...newEvent, description: e.target.value})} />
               <input type="datetime-local" className="w-full border rounded-lg p-2 dark:bg-zinc-800" value={newEvent.date} onChange={(e) => setNewEvent({...newEvent, date: e.target.value})} />
-              <input type="number" placeholder="Capacity" className="w-full border rounded-lg p-2 dark:bg-zinc-800" value={newEvent.capacity} onChange={(e) => setNewEvent({...newEvent, capacity: Number(e.target.value)})} />
+              <input type="number" placeholder="Capacity" className="w-full border rounded-lg p-2 dark:bg-zinc-800" value={newEvent.capacity} onChange={(e) => setNewEvent({...newEvent, capacity: e.target.value})} />
               <div className="flex gap-4 pt-4">
                 <button onClick={() => setShowEventModal(false)} className="flex-1 py-2 bg-gray-200 dark:bg-zinc-800 rounded-lg">Cancel</button>
                 <button onClick={handleCreateEvent} className="flex-1 py-2 bg-blue-600 text-white rounded-lg">Create</button>
